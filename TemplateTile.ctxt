@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=TemplateTile
+comment0.text=\r\n\ This\ is\ a\ template\ for\ makeing\ your\ own\ Tile\r\n\ \r\n\ 1.\ Duplicate\ this\ class\ by\ right\ clicking\ it\ in\ the\ class\ tree\ and\ hitting\ "duplicate"\r\n\ \r\n\ 2.\ Make\ an\ image\ that\ is\ rectangular,\ and\ has\ a\ resolution\ divisible\ by\ 32.\r\n\ \ \ \ for\ example\:\ 32x32,\ 32x64,\ 64x64,\ 80x32\r\n\ \ \ \ Make\ sure\ it\ is\ in\ the\ "images"\ folder\ that\ is\ in\ the\ same\ folder\ as\ the\ .greenfoot\ file.\r\n\ \ \ \ Set\ it\ to\ this\ class\ by\ right\ clicking\ this\ class\ in\ the\ class\ tree\ and\ hitting\ "set\ image"\r\n\ \ \ \ \r\n\ 3.\ Add\ any\ needed\ variables\ for\ the\ actions\ of\ this\ building\ in\ the\ designated\ space\ below.\r\n\ \ \ \ The\ cost\ and\ name\ of\ this\ building\ should\ have\ already\ been\ set\ in\ the\ TemplateButton\ class.\r\n\ \ \ \ Change\ the\ name\ of\ the\ Class\ and\ the\ Constructor\ to\ the\ name\ you\ desire\r\n\ \ \ \ \r\n\ 4.\ Go\ down\ to\ the\ "Else"\ section\ of\ the\ Act\ mehod\ to\ add\ your\ custom\ code\r\n\ \ \ \ For\ reference,\ see\ the\ "barnTile"\ class\r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=costIn
+comment1.target=TemplateTile(double)
+comment2.params=
+comment2.target=void\ act()
+numComments=3

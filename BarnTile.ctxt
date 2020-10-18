@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=BarnTile
+comment0.text=\r\n\ 2x2\ tiles\r\n\ gives\ the\ player\ 10$\ every\ 5\ seconds\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=costIn
+comment1.target=BarnTile(double)
+comment2.params=
+comment2.target=void\ act()
+numComments=3
