@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=SiloTile
+comment0.text=\r\n\ \ 1x3\ tiles\r\n\ \ functionless\r\n
+comment1.params=costIn
+comment1.target=SiloTile(double)
+comment2.params=
+comment2.target=void\ act()
+numComments=3
