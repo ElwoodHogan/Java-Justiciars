@@ -178,6 +178,7 @@ public class MainWorld extends World {
             buildingsButtonList.add(new barnButton());
             //add your class here
             buildingsButtonList.add(new siloButton());
+            buildingsButtonList.add(new GarageButton());
         }
         
     //returns the money variable    
