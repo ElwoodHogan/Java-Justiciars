@@ -185,6 +185,7 @@ public class MainWorld extends World {
             //add your class here
             buildingsButtonList.add(new siloButton());
             buildingsButtonList.add(new GarageButton());
+            buildingsButtonList.add(new ToolShedButton());
         }
       
     //====================
