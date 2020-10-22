@@ -20,11 +20,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class templateButton extends Buttons
+public class ToolShedButton extends BuildingButtons
 {
     //Edit these fields
-    private final String tileName = "";
-    public double cost = 0;
+    private final String tileName = "Tool Shed";
+    public double cost = 40;
     
     public void act() 
     {
@@ -35,7 +35,7 @@ public class templateButton extends Buttons
         if (Greenfoot.mouseClicked(this) && ((MainWorld)getWorld()).money > cost) {
                 //                               Edit this with the tile class' name
                 //                                    VVVVVVVVVVVV
-                ((MainWorld)getWorld()).addObject(new TemplateTile(cost), mouse.getX(), mouse.getY());
+                ((MainWorld)getWorld()).addObject(new ToolShedTile(cost), mouse.getX(), mouse.getY());
             }
     }    
 }

@@ -13,6 +13,10 @@ public class MainWorld extends World {
     public static List<Object> mainButtonList = new ArrayList<Object>();
     public static List<Object> buildingsButtonList = new ArrayList<Object>();
     public static List<Object> farmsButtonList = new ArrayList<Object>();
+    public static List<Object> animalsButtonList = new ArrayList<Object>();
+    public static List<Object> pathsButtonList = new ArrayList<Object>();
+    public static List<Object> fencingButtonList = new ArrayList<Object>();
+    public static List<Object> decorButtonList = new ArrayList<Object>();
     //initializing starting money
     public static double money = 200;
     //initializing objects for 
@@ -171,20 +175,20 @@ public class MainWorld extends World {
             }
             
             
-        }
+    }
         
     public void removeBuildingsButtons() {
            for (Object button : buildingsButtonList) {
                 removeObject((Actor)button);
             } 
         }
-        
-    //Stores a new set of buildings button objects to the pre-initialized list    
+    
     public void addToBuildingsList() {
             buildingsButtonList.add(new barnButton());
             //add your class here
             buildingsButtonList.add(new siloButton());
             buildingsButtonList.add(new GarageButton());
+            buildingsButtonList.add(new ToolShedButton());
         }
       
     //====================
@@ -209,19 +213,129 @@ public class MainWorld extends World {
                 removeObject((Actor)button);
             } 
         }
-        
-    //Stores a new set of buildings button objects to the pre-initialized list    
+     
     public void addToFarmsList() {
-            buildingsButtonList.add(new farmsButton());
+            farmsButtonList.add(new CornButton());
             //add your class here
             
         }
+     
+    //====================
+    //Animals Buttons
+    //==================== 
+    
+    public void addAnimalsButtons() {
+        addToFarmsList();
+        int size = animalsButtonList.size();
+        int i = 0;
+            for (Object button : animalsButtonList) {
+                if (i>animalsButtonList.size()) {i=0;};
+                addObject((Actor)button, 36+22+(i*109), 1024);
+                i++;        
+            }
+            
+            
+        }
         
+    public void removeAnimalsButtons() {
+           for (Object button : animalsButtonList) {
+                removeObject((Actor)button);
+            } 
+        }
+    
+    public void addToAnimalsList() {
+            animalsButtonList.add(new animalsButton());
+            //add your class here
+            
+        }    
         
+    //====================
+    //Paths Buttons
+    //==================== 
+    
+    public void addPathsButtons() {
+        addToFarmsList();
+        int size = pathsButtonList.size();
+        int i = 0;
+            for (Object button : pathsButtonList) {
+                if (i>pathsButtonList.size()) {i=0;};
+                addObject((Actor)button, 36+22+(i*109), 1024);
+                i++;        
+            }
+            
+            
+        }
         
+    public void removePathsButtons() {
+           for (Object button : pathsButtonList) {
+                removeObject((Actor)button);
+            } 
+        }
+      
+    public void addToPathsList() {
+            pathsButtonList.add(new pathsButton());
+            //add your class here
+            
+        }     
         
+    //====================
+    //Fencing Buttons
+    //==================== 
+    
+    public void addFencingButtons() {
+        addToFarmsList();
+        int size = fencingButtonList.size();
+        int i = 0;
+            for (Object button : fencingButtonList) {
+                if (i>fencingButtonList.size()) {i=0;};
+                addObject((Actor)button, 36+22+(i*109), 1024);
+                i++;        
+            }
+            
+            
+        }
         
+    public void removeFencingButtons() {
+           for (Object button : fencingButtonList) {
+                removeObject((Actor)button);
+            } 
+        }
+    
+    public void addToFencingList() {
+            fencingButtonList.add(new fencingButton());
+            //add your class here
+            
+        }    
         
+    //====================
+    //Decor Buttons
+    //==================== 
+    
+    public void addDecorButtons() {
+        addToFarmsList();
+        int size = decorButtonList.size();
+        int i = 0;
+            for (Object button : decorButtonList) {
+                if (i>decorButtonList.size()) {i=0;};
+                addObject((Actor)button, 36+22+(i*109), 1024);
+                i++;        
+            }
+            
+            
+        }
+        
+    public void removeDecorButtons() {
+           for (Object button : decorButtonList) {
+                removeObject((Actor)button);
+            } 
+        }
+       
+    public void addToDecorList() {
+            decorButtonList.add(new decorButton());
+            //add your class here
+            
+        }     
+     
         
         
     //returns the money variable    

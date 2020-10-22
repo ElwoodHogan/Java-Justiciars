@@ -50,8 +50,15 @@ public class CornTile extends Farms
         if (placed == false) {
             //This section is for actions before the building is fully placed
             
+            //Deletes the blueprint if right clicked
+            if(mouse != null) {
+                if (mouse.getButton() == 3) {
+                    ((MainWorld)getWorld()).removeObject(this);
+                    return;
+                }
+            }
             //follows the mouse
-              if (Greenfoot.mouseMoved(null)) {
+            if (Greenfoot.mouseMoved(null)) {
                 //subtracts a left over number by 16 to make the tile snap to a grid
                 setLocation(mouse.getX()-((mouse.getX() % 32) - (ogImage.getWidth() / 2)), 
                     mouse.getY()-((mouse.getY() % 32) - (ogImage.getHeight() / 2)));

@@ -19,7 +19,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TemplateTile extends Buildings
+public class TemplateTile extends Tiles
 {
     //the cost of the building
     public double cost;
@@ -50,6 +50,13 @@ public class TemplateTile extends Buildings
         if (placed == false) {
             //This section is for actions before the building is fully placed
             
+            //Deletes the blueprint if right clicked
+            if(mouse != null) {
+                if (mouse.getButton() == 3) {
+                    ((MainWorld)getWorld()).removeObject(this);
+                    return;
+                }
+            }
             //follows the mouse
               if (Greenfoot.mouseMoved(null)) {
                 //subtracts a left over number by 16 to make the tile snap to a grid

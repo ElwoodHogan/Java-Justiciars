@@ -19,7 +19,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GarageTile extends Buildings
+public class ToolShedTile extends Buildings
 {
     //the cost of the building
     public double cost;
@@ -39,7 +39,7 @@ public class GarageTile extends Buildings
     private boolean placed = false;
     
     //Dont forget to change this to the class name!!!
-    public GarageTile(double costIn) {
+    public ToolShedTile(double costIn) {
             cost = costIn;
         }
         
