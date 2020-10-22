@@ -12,11 +12,11 @@ public class MainWorld extends World {
     //initializes lists for the buttons
     public static List<Object> mainButtonList = new ArrayList<Object>();
     public static List<Object> buildingsButtonList = new ArrayList<Object>();
+    public static List<Object> farmsButtonList = new ArrayList<Object>();
     //initializing starting money
     public static double money = 200;
     //initializing objects for 
     mainButtonMenu mainButtonMenu = new mainButtonMenu();
-    buildingsButtonMenu buildingsButtonMenu = new buildingsButtonMenu();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -118,6 +118,10 @@ public class MainWorld extends World {
     //Buttons
     //============================
     
+    
+    //====================
+    //Main Buttons
+    //====================
     //spawns the main buttons 
     public void addMainButtons() {
         //calls the method to add the list of buttons to the arrayList
@@ -138,8 +142,7 @@ public class MainWorld extends World {
            for (Object button : mainButtonList) {
                 removeObject((Actor)button);
             } 
-        } 
-        
+        }
     //Stores a new set of main button objects to the pre-initialized list
     public void addToMainList() {
             mainButtonList.add(new buildingsButton());
@@ -151,8 +154,11 @@ public class MainWorld extends World {
             
             
         } 
-    
         
+    //====================
+    //Building Buttons
+    //==================== 
+    
     //same as last set, but with building buttons instead of main buttons
     public void addBuildingsButtons() {
         addToBuildingsList();
@@ -180,6 +186,43 @@ public class MainWorld extends World {
             buildingsButtonList.add(new siloButton());
             buildingsButtonList.add(new GarageButton());
         }
+      
+    //====================
+    //Farms Buttons
+    //==================== 
+    
+    public void addFarmsButtons() {
+        addToFarmsList();
+        int size = farmsButtonList.size();
+        int i = 0;
+            for (Object button : farmsButtonList) {
+                if (i>farmsButtonList.size()) {i=0;};
+                addObject((Actor)button, 36+22+(i*109), 1024);
+                i++;        
+            }
+            
+            
+        }
+        
+    public void removeFarmsButtons() {
+           for (Object button : farmsButtonList) {
+                removeObject((Actor)button);
+            } 
+        }
+        
+    //Stores a new set of buildings button objects to the pre-initialized list    
+    public void addToFarmsList() {
+            buildingsButtonList.add(new farmsButton());
+            //add your class here
+            
+        }
+        
+        
+        
+        
+        
+        
+        
         
     //returns the money variable    
     public double getMoney() {
