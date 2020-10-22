@@ -18,11 +18,11 @@ For making your own Tile:
  *    Make sure it is in the "images" folder that is in the same folder as the .greenfoot file.
  *    Set it to this class by right clicking this class in the class tree and hitting "set image"
  *    
- * 3. Add any needed variables for the actions of this building in the designated in the code.
+ * 3. Add any needed variables for the actions of this building in the designated space below.
  *    The cost and name of this building should have already been set in the TemplateButton class.
  *    Change the name of the Class and the Constructor to the name you desire
  *    
- * 4. Go down to the "Else" section of the Act method in the code to add your custom code
+ * 4. Go down to the "Else" section of the Act mehod to add your custom code
  *    For reference, see the "barnTile" class
 
 
