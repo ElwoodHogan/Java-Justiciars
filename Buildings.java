@@ -15,5 +15,14 @@ public class Buildings extends Tiles
     public void act() 
     {
         // Add your action code here.
-    }    
+    }
+    
+    public void removeThis() {
+        if(mouse != null) {
+                if (mouse.getButton() == 3) {
+                    ((MainWorld)getWorld()).removeObject(this);
+                    return;
+                }
+            }
+    }
 }

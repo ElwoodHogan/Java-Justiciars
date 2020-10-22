@@ -23,7 +23,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class CornButton extends BuildingButtons
 {
     //Edit these fields
-    private final String tileName = "";
+    private final String tileName = "Corn";
     public double cost = 10;
     
     public void act() 

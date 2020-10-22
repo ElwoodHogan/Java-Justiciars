@@ -50,6 +50,13 @@ public class GarageTile extends Buildings
         if (placed == false) {
             //This section is for actions before the building is fully placed
             
+            //Deletes the blueprint if right clicked
+            if(mouse != null) {
+                if (mouse.getButton() == 3) {
+                    ((MainWorld)getWorld()).removeObject(this);
+                    return;
+                }
+            }
             //follows the mouse
               if (Greenfoot.mouseMoved(null)) {
                 //subtracts a left over number by 16 to make the tile snap to a grid
