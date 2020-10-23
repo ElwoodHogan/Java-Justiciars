@@ -1,4 +1,3 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 import java.util.ArrayList;
@@ -17,10 +16,14 @@ public class MainWorld extends World {
     public static List<Object> pathsButtonList = new ArrayList<Object>();
     public static List<Object> fencingButtonList = new ArrayList<Object>();
     public static List<Object> decorButtonList = new ArrayList<Object>();
+    
+    //Storing which set of buttons are loaded
+    public String currentButtons = "main";
     //initializing starting money
     public static double money = 200;
-    //initializing objects for 
+    //initializing objects for spawning
     mainButtonMenu mainButtonMenu = new mainButtonMenu();
+    backButton backButton = new backButton();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -37,9 +40,15 @@ public class MainWorld extends World {
         addObject(new rock(), 1888, 48);
         addObject(new rock(), 1888-32, 48+16);
         spawnForest();
-        //spawns the opening set of main buttons
-        addMainButtons();
+        
         addObject(mainButtonMenu, 660, 1080-60);
+        addObject(backButton, 1255, 1024);
+        if (!mainButtonList.isEmpty()) {
+                removeMainButtons();
+            }
+            //spawns the opening set of main buttons
+        addMainButtons();
+        money = 200;
     }
     
     public void act() {
@@ -126,26 +135,28 @@ public class MainWorld extends World {
     //====================
     //Main Buttons
     //====================
+    
     //spawns the main buttons 
     public void addMainButtons() {
         //calls the method to add the list of buttons to the arrayList
         addToMainList();
-        
-        
+        currentButtons = "main";
         int i = 0;
             for (Object button : mainButtonList) {
                 //testing if i is more than 5, because Greenfoor refuses to re-initalize the i variable
-                if (i>mainButtonList.size()) {i=0;};
+                if (i>5) {i=0;};
                 addObject((Actor)button, 36+22+(i*109), 1024);
                 i++;        
             }
     }
-    
     //removes the pre-made list of objects
     public void removeMainButtons() {
-           for (Object button : mainButtonList) {
-                removeObject((Actor)button);
-            } 
+        int i;
+           for (i = 0; i < mainButtonList.size(); i++) {
+                removeObject((Actor)mainButtonList.get(i));
+                
+               }
+        mainButtonList.clear();       
         }
     //Stores a new set of main button objects to the pre-initialized list
     public void addToMainList() {
@@ -155,8 +166,6 @@ public class MainWorld extends World {
             mainButtonList.add(new pathsButton());
             mainButtonList.add(new fencingButton());
             mainButtonList.add(new decorButton());
-            
-            
         } 
         
     //====================
@@ -166,21 +175,19 @@ public class MainWorld extends World {
     //same as last set, but with building buttons instead of main buttons
     public void addBuildingsButtons() {
         addToBuildingsList();
-        int size = buildingsButtonList.size();
+        currentButtons = "buildings";
         int i = 0;
             for (Object button : buildingsButtonList) {
-                if (i>buildingsButtonList.size()) {i=0;};
                 addObject((Actor)button, 36+22+(i*109), 1024);
-                i++;        
-            }
-            
-            
+                i++;
+            } 
     }
         
     public void removeBuildingsButtons() {
            for (Object button : buildingsButtonList) {
                 removeObject((Actor)button);
-            } 
+           }
+           buildingsButtonList.clear(); 
         }
     
     public void addToBuildingsList() {
@@ -197,21 +204,20 @@ public class MainWorld extends World {
     
     public void addFarmsButtons() {
         addToFarmsList();
-        int size = farmsButtonList.size();
+        currentButtons = "farms";
         int i = 0;
             for (Object button : farmsButtonList) {
                 if (i>farmsButtonList.size()) {i=0;};
                 addObject((Actor)button, 36+22+(i*109), 1024);
                 i++;        
             }
-            
-            
         }
         
     public void removeFarmsButtons() {
            for (Object button : farmsButtonList) {
                 removeObject((Actor)button);
-            } 
+           }
+           farmsButtonList.clear();
         }
      
     public void addToFarmsList() {
@@ -226,21 +232,21 @@ public class MainWorld extends World {
     
     public void addAnimalsButtons() {
         addToFarmsList();
+        currentButtons = "animals";
         int size = animalsButtonList.size();
         int i = 0;
             for (Object button : animalsButtonList) {
                 if (i>animalsButtonList.size()) {i=0;};
                 addObject((Actor)button, 36+22+(i*109), 1024);
                 i++;        
-            }
-            
-            
+            } 
         }
         
     public void removeAnimalsButtons() {
            for (Object button : animalsButtonList) {
                 removeObject((Actor)button);
-            } 
+           }
+           animalsButtonList.clear();
         }
     
     public void addToAnimalsList() {
@@ -255,21 +261,21 @@ public class MainWorld extends World {
     
     public void addPathsButtons() {
         addToFarmsList();
+        currentButtons = "paths";
         int size = pathsButtonList.size();
         int i = 0;
             for (Object button : pathsButtonList) {
                 if (i>pathsButtonList.size()) {i=0;};
                 addObject((Actor)button, 36+22+(i*109), 1024);
                 i++;        
-            }
-            
-            
+            }  
         }
         
     public void removePathsButtons() {
            for (Object button : pathsButtonList) {
                 removeObject((Actor)button);
-            } 
+           }
+           pathsButtonList.clear();
         }
       
     public void addToPathsList() {
@@ -284,6 +290,7 @@ public class MainWorld extends World {
     
     public void addFencingButtons() {
         addToFarmsList();
+        currentButtons = "fencing";
         int size = fencingButtonList.size();
         int i = 0;
             for (Object button : fencingButtonList) {
@@ -291,14 +298,13 @@ public class MainWorld extends World {
                 addObject((Actor)button, 36+22+(i*109), 1024);
                 i++;        
             }
-            
-            
         }
         
     public void removeFencingButtons() {
            for (Object button : fencingButtonList) {
                 removeObject((Actor)button);
-            } 
+           }
+           fencingButtonList.clear();
         }
     
     public void addToFencingList() {
@@ -313,6 +319,7 @@ public class MainWorld extends World {
     
     public void addDecorButtons() {
         addToFarmsList();
+        currentButtons = "decor";
         int size = decorButtonList.size();
         int i = 0;
             for (Object button : decorButtonList) {
@@ -320,14 +327,13 @@ public class MainWorld extends World {
                 addObject((Actor)button, 36+22+(i*109), 1024);
                 i++;        
             }
-            
-            
         }
         
     public void removeDecorButtons() {
            for (Object button : decorButtonList) {
                 removeObject((Actor)button);
-            } 
+           }
+           decorButtonList.clear();
         }
        
     public void addToDecorList() {

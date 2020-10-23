@@ -10,10 +10,10 @@ public class buildingsButton extends MainButtons
         MouseInfo mouse = Greenfoot.getMouseInfo();
         //detects if button was clicked/  if so, removes the main button menu and adds the buildings button menu
         getWorld().showText(buttonName, getX(), getY()-44);
+        getWorld().showText("", getX(), getY()+39);
         if (Greenfoot.mouseClicked(this)) {
                 ((MainWorld)getWorld()).addBuildingsButtons();
-                ((MainWorld)getWorld()).removeMainButtons(); 
-                
+                ((MainWorld)getWorld()).removeMainButtons();
             }
     }    
 }
