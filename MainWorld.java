@@ -49,11 +49,20 @@ public class MainWorld extends World {
             //spawns the opening set of main buttons
         addMainButtons();
         money = 200;
+        
+        //Clears the lists so the lists do not increase on a reset
+        buildingsButtonList.clear();
+        farmsButtonList.clear();
+        animalsButtonList.clear();
+        pathsButtonList.clear();
+        fencingButtonList.clear();
+        decorButtonList.clear();
     }
     
     public void act() {
             //displays the players current money
             showText("Money: " + money, 120, 50);
+            showText("" + buildingsButtonList.size(), 120, 100);
         }
         
     //========================
