@@ -19,7 +19,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CornTile extends Farms
+public class basicSoilTile extends Soils
 {
     //the cost of the building
     public double cost;
@@ -39,7 +39,7 @@ public class CornTile extends Farms
     private boolean placed = false;
     
     //Dont forget to change this to the class name!!!
-    public CornTile(double costIn) {
+    public basicSoilTile(double costIn) {
             cost = costIn;
         }
         
@@ -58,7 +58,7 @@ public class CornTile extends Farms
                 }
             }
             //follows the mouse
-            if (Greenfoot.mouseMoved(null)) {
+              if (Greenfoot.mouseMoved(null)) {
                 //subtracts a left over number by 16 to make the tile snap to a grid
                 setLocation(mouse.getX()-((mouse.getX() % 32) - (ogImage.getWidth() / 2)), 
                     mouse.getY()-((mouse.getY() % 32) - (ogImage.getHeight() / 2)));

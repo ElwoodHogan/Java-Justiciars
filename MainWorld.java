@@ -11,11 +11,16 @@ public class MainWorld extends World {
     //initializes lists for the buttons
     public static List<Object> mainButtonList = new ArrayList<Object>();
     public static List<Object> buildingsButtonList = new ArrayList<Object>();
-    public static List<Object> farmsButtonList = new ArrayList<Object>();
+    public static List<Object> soilsButtonList = new ArrayList<Object>();
     public static List<Object> animalsButtonList = new ArrayList<Object>();
     public static List<Object> pathsButtonList = new ArrayList<Object>();
     public static List<Object> fencingButtonList = new ArrayList<Object>();
     public static List<Object> decorButtonList = new ArrayList<Object>();
+    
+    //Initializing the global seed variables
+    public static int ownedCornSeeds = 0;
+    public static int ownedPotatoSeeds = 0;
+    public static int ownedCottonSeeds = 0;
     
     //Storing which set of buttons are loaded
     public String currentButtons = "main";
@@ -48,11 +53,13 @@ public class MainWorld extends World {
             }
             //spawns the opening set of main buttons
         addMainButtons();
+        addObject(new seedShopButton(), 1980-120, 1080-60);
+        //addObject(new seedShopMenu(), 1980-120, 540);
         money = 200;
         
         //Clears the lists so the lists do not increase on a reset
         buildingsButtonList.clear();
-        farmsButtonList.clear();
+        soilsButtonList.clear();
         animalsButtonList.clear();
         pathsButtonList.clear();
         fencingButtonList.clear();
@@ -211,26 +218,26 @@ public class MainWorld extends World {
     //Farms Buttons
     //==================== 
     
-    public void addFarmsButtons() {
-        addToFarmsList();
+    public void addSoilsButtons() {
+        addToSoilsList();
         currentButtons = "farms";
         int i = 0;
-            for (Object button : farmsButtonList) {
-                if (i>farmsButtonList.size()) {i=0;};
+            for (Object button : soilsButtonList) {
+                if (i>soilsButtonList.size()) {i=0;};
                 addObject((Actor)button, 36+22+(i*109), 1024);
                 i++;        
             }
         }
         
-    public void removeFarmsButtons() {
-           for (Object button : farmsButtonList) {
+    public void removeSoilsButtons() {
+           for (Object button : soilsButtonList) {
                 removeObject((Actor)button);
            }
-           farmsButtonList.clear();
+           soilsButtonList.clear();
         }
      
-    public void addToFarmsList() {
-            farmsButtonList.add(new CornButton());
+    public void addToSoilsList() {
+            soilsButtonList.add(new basicSoil());
             //add your class here
             
         }
@@ -240,7 +247,7 @@ public class MainWorld extends World {
     //==================== 
     
     public void addAnimalsButtons() {
-        addToFarmsList();
+        addToAnimalsList();
         currentButtons = "animals";
         int size = animalsButtonList.size();
         int i = 0;
@@ -269,7 +276,7 @@ public class MainWorld extends World {
     //==================== 
     
     public void addPathsButtons() {
-        addToFarmsList();
+        addToPathsList();
         currentButtons = "paths";
         int size = pathsButtonList.size();
         int i = 0;
@@ -298,7 +305,7 @@ public class MainWorld extends World {
     //==================== 
     
     public void addFencingButtons() {
-        addToFarmsList();
+        addToFencingList();
         currentButtons = "fencing";
         int size = fencingButtonList.size();
         int i = 0;
@@ -327,7 +334,7 @@ public class MainWorld extends World {
     //==================== 
     
     public void addDecorButtons() {
-        addToFarmsList();
+        addToDecorList();
         currentButtons = "decor";
         int size = decorButtonList.size();
         int i = 0;
