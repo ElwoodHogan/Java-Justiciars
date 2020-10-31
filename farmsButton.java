@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class farmsButton extends MainButtons
 {
     
-    private final String buttonName = "Farms";
+    private final String buttonName = "Soils";
     public void act() 
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -17,7 +17,7 @@ public class farmsButton extends MainButtons
         getWorld().showText(buttonName, getX(), getY()-44);
         getWorld().showText("", getX(), getY()+39);
         if (Greenfoot.mouseClicked(this)) {
-                ((MainWorld)getWorld()).addFarmsButtons();
+                ((MainWorld)getWorld()).addSoilsButtons();
                 ((MainWorld)getWorld()).removeMainButtons(); 
                 
             }

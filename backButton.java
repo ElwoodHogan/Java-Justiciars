@@ -22,7 +22,7 @@ public class backButton extends Buttons
                             ((MainWorld)getWorld()).removeBuildingsButtons();
                             break;
                         case "farms":
-                            ((MainWorld)getWorld()).removeFarmsButtons();
+                            ((MainWorld)getWorld()).removeSoilsButtons();
                             break;
                         case "animals":
                             ((MainWorld)getWorld()).removeAnimalsButtons();
