@@ -25,6 +25,7 @@ public class basicSoilTile extends Soils
     public double cost;
     
     //add any needed variables here
+    public double soilQuality = 2;
     
     //creates the current image for use in making a border, and a new un-edited copy of the current image.
     GreenfootImage rectImage = getImage();
@@ -87,5 +88,8 @@ public class basicSoilTile extends Soils
             
         }
         
+        
     }
+    
+    
 }
