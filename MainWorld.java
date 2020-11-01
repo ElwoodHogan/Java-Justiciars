@@ -21,6 +21,8 @@ public class MainWorld extends World {
     public static int ownedCornSeeds = 0;
     public static int ownedPotatoSeeds = 0;
     public static int ownedCottonSeeds = 0;
+    public static int ownedDonutSeeds = 0;
+    public static int ownedMoneySeeds = 0;
     
     //Storing which set of buttons are loaded
     public String currentButtons = "main";
@@ -29,6 +31,9 @@ public class MainWorld extends World {
     //initializing objects for spawning
     mainButtonMenu mainButtonMenu = new mainButtonMenu();
     backButton backButton = new backButton();
+    public static Player player = new Player();
+    public static seedShopButton seedShop = new seedShopButton();
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -39,7 +44,7 @@ public class MainWorld extends World {
         super(1920, 1080, 1, true);
         setPaintOrder(Buttons.class, HUD.class, Player.class, Environment.class, Buildings.class);
         //spawns the player
-        addObject(new Player(), 990, 540);
+        addObject(player, 990, 540);
         //spawns the ocean, ocean rocks, and forest area
         spawnOcean();
         addObject(new rock(), 1888, 48);
@@ -53,7 +58,7 @@ public class MainWorld extends World {
             }
             //spawns the opening set of main buttons
         addMainButtons();
-        addObject(new seedShopButton(), 1980-120, 1080-60);
+        addObject(seedShop, 1980-120, 1080-60);
         //addObject(new seedShopMenu(), 1980-120, 540);
         money = 200;
         
