@@ -8,6 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Seeds extends Tiles
 {
+    public int stage = 0;
+    public boolean grown = false;
+    public int minSellAmount = 4;
+    public int maxSellAmount = 10;
+    Soils soil = null;
     /**
      * Act - do whatever the Seeds wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,5 +20,11 @@ public class Seeds extends Tiles
     public void act() 
     {
         // Add your action code here.
-    }    
+    } 
+    
+    public void sell() {
+            MainWorld.money += (minSellAmount + Greenfoot.getRandomNumber(maxSellAmount-minSellAmount+1));
+            
+            ((MainWorld)getWorld()).removeObject(this);
+        }
 }

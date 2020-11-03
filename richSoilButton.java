@@ -6,11 +6,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class basicSoil extends SoilButtons
+public class richSoilButton extends SoilButtons
 {
     //Edit these fields
-    private final String tileName = "Basic Soil";
-    public double cost = 10;
+    private final String tileName = "Rich Soil";
+    public double cost = 100;
     
     public void act() 
     {
@@ -21,7 +21,7 @@ public class basicSoil extends SoilButtons
         if (Greenfoot.mouseClicked(this) && ((MainWorld)getWorld()).money > cost) {
                 //                               Edit this with the tile class' name
                 //                                    VVVVVVVVVVVV
-                ((MainWorld)getWorld()).addObject(new basicSoilTile(cost), mouse.getX(), mouse.getY());
+                ((MainWorld)getWorld()).addObject(new richSoilTile(cost), mouse.getX(), mouse.getY());
             }
     }    
 }

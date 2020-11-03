@@ -23,13 +23,14 @@ public class Player extends Actor
      */
     public void act() 
     {
-        //GreenfootImage img = getImage();
-        //Color currentColor = new Color (255, 255, 255);
-        //img.setColor(currentColor);
-        //setImage(img);
+        
         movement();
         plantSeed();
         selectSeed();
+        harvest();
+        waterCrops();
+        
+        
     }
     
     public void movement(){
@@ -66,10 +67,11 @@ public class Player extends Actor
                     if (neighbours.size() != 0) {
                         for (Object neighbour : neighbours) {
                             if (neighbour instanceof Soils) {
-                                Actor soil = (Actor)neighbour;
-                                if (MainWorld.seedShop.getSeedAmount() > 0)  {
+                                Soils soil = (Soils)neighbour;
+                                if (MainWorld.seedShop.getSeedAmount() > 0 && soil.planted == false)  {
                                     MainWorld.seedShop.getSeedObject();
                                     this.getWorld().addObject((Actor)MainWorld.seedShop.getSeedObject(), soil.getX(), soil.getY());
+                                    soil.planted = true;
                                     MainWorld.seedShop.suptractSeedAmount();
                                     return;  
                                 }
@@ -101,6 +103,45 @@ public class Player extends Actor
                 }
             } catch(Exception e)  {}
         }
+    
+    public void harvest() {
+        if(Greenfoot.isKeyDown("r"))  {
+            for (int distance = 1; distance <= 32; distance++) {
+                List neighbours = this.getObjectsInRange(distance, null);
+                if (neighbours.size() != 0) {
+                    for (Object neighbour : neighbours) {
+                        if (neighbour instanceof Seeds) {
+                            Seeds crop = (Seeds)neighbour;
+                            if (crop.grown == true) {
+                                  crop.sell();
+                            }
+                        }
+                    }
+                }
+            }     
+            }
+        }
+    
+    public void waterCrops() {
+        if(Greenfoot.isKeyDown("q")) {
+            for (int distance = 1; distance <= 32; distance++) {
+                List neighbours = this.getObjectsInRange(distance, null);
+                if (neighbours.size() != 0) {
+                    for (Object neighbour : neighbours) {
+                        if (neighbour instanceof Soils) {
+                            Soils soil = (Soils)neighbour;
+                            if (soil.watered == false && MainWorld.waterMeter.drain(20) == true) {
+                                  soil.water();
+                            }
+                        }
+                        if (neighbour instanceof wellTile) {
+                            MainWorld.waterMeter.refill();
+                        } 
+                    }
+                }
+            }
+        }
+    }    
         
     public int getSelectedSeed() {
             return selectedSeed;

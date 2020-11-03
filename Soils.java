@@ -8,13 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Soils extends Tiles
 {
-    public double growthRate = 1;
+    public double soilQuality = 3;
+    public boolean watered = false;
+    public int timer = 60*45;
+    public boolean planted = false;
     public void act() 
     {
         // Add your action code here.
     }
     
     public double getGrowthRate() {
-              return this.growthRate;  
+              return this.soilQuality;  
             }
+            
+    public void water() {
+            watered = true;
+        }
 }

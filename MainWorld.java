@@ -33,6 +33,7 @@ public class MainWorld extends World {
     backButton backButton = new backButton();
     public static Player player = new Player();
     public static seedShopButton seedShop = new seedShopButton();
+    public static waterMeter waterMeter = new waterMeter();
     
     /**
      * Constructor for objects of class MyWorld.
@@ -59,6 +60,7 @@ public class MainWorld extends World {
             //spawns the opening set of main buttons
         addMainButtons();
         addObject(seedShop, 1980-120, 1080-60);
+        addObject(waterMeter, 1980-220, 1080-60);
         //addObject(new seedShopMenu(), 1980-120, 540);
         money = 200;
         
@@ -217,6 +219,7 @@ public class MainWorld extends World {
             buildingsButtonList.add(new siloButton());
             buildingsButtonList.add(new GarageButton());
             buildingsButtonList.add(new ToolShedButton());
+            buildingsButtonList.add(new wellButton());
         }
       
     //====================
@@ -242,7 +245,8 @@ public class MainWorld extends World {
         }
      
     public void addToSoilsList() {
-            soilsButtonList.add(new basicSoil());
+            soilsButtonList.add(new basicSoilButton());
+            soilsButtonList.add(new richSoilButton());
             //add your class here
             
         }
