@@ -19,7 +19,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class basicSoilTile extends Soils
+public class richSoilTile extends Soils
 {
     //the cost of the building
     public double cost;
@@ -42,9 +42,9 @@ public class basicSoilTile extends Soils
     private boolean placed = false;
     
     //Dont forget to change this to the class name!!!
-    public basicSoilTile(double costIn) {
+    public richSoilTile(double costIn) {
             cost = costIn;
-            soilQuality = 1;
+            soilQuality = 1.5;
             watered = false;
             planted = false;
             timer = 60*45;

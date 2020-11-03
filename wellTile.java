@@ -19,7 +19,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class basicSoilTile extends Soils
+public class wellTile extends Buildings
 {
     //the cost of the building
     public double cost;
@@ -30,9 +30,6 @@ public class basicSoilTile extends Soils
     GreenfootImage rectImage = getImage();
     GreenfootImage ogImage = new GreenfootImage(rectImage);
     
-    //Grabbing the watered version
-    GreenfootImage wateredImage = new GreenfootImage("WateredSoil/BasicSoilTileWatered.png");
-    
     //Creates the red and green colors used in drawing a rectangle
     Color redColor = new Color (255, 0, 0);
     Color greenColor = new Color (0, 255, 0);
@@ -42,12 +39,8 @@ public class basicSoilTile extends Soils
     private boolean placed = false;
     
     //Dont forget to change this to the class name!!!
-    public basicSoilTile(double costIn) {
+    public wellTile(double costIn) {
             cost = costIn;
-            soilQuality = 1;
-            watered = false;
-            planted = false;
-            timer = 60*45;
         }
         
     public void act() 
@@ -65,7 +58,7 @@ public class basicSoilTile extends Soils
                 }
             }
             //follows the mouse
-              if (Greenfoot.mouseMoved(null)) {
+            if (Greenfoot.mouseMoved(null)) {
                 //subtracts a left over number by 16 to make the tile snap to a grid
                 setLocation(mouse.getX()-((mouse.getX() % 32) - (ogImage.getWidth() / 2)), 
                     mouse.getY()-((mouse.getY() % 32) - (ogImage.getHeight() / 2)));
@@ -91,34 +84,8 @@ public class basicSoilTile extends Soils
             }  
         } else {
             //This is where you tell the building what it does
-            if (watered == true && planted == true) {
-                    timer--;
-                    if (timer == 0) {
-                        watered = false;
-                    }
-                }
-            //getWorld().showText("" + watered, getX(), getY());
-            //getWorld().showText("" + planted, getX(), getY());
-            //getWorld().showText("" + timer, getX(), getY()-44);
-            changeState();
-            if (!isTouching(Seeds.class)){planted = false;}
+            
         }
-        
         
     }
-    
-    public void water() {
-            watered = true;
-            timer = 60 * 45;
-        }
-    
-    public void changeState() {
-            if (watered == true) {
-                    //ogImage.clear();
-                    //wateredImage.drawImage(wateredImage, 0, 0);
-                    setImage(wateredImage);
-            } else {
-                    setImage(ogImage);
-                }
-        }
 }

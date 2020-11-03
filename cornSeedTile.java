@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -9,35 +10,59 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class cornSeedTile extends Seeds
 {
     
-    public double growthRate = 1;
-    public int stage = 0;
+    public double growthRate = 0;
+    public double quality = 9;
     private double timer = (60*30) * growthRate;
-    
     GreenfootImage stage1 = new GreenfootImage("crops/cornTeen.png");
     GreenfootImage stage2 = new GreenfootImage("crops/cornFull.png");
+    Soils soil = null;
+    
+    public cornSeedTile() {
+            stage = 0;
+            grown = false;
+            minSellAmount = 10;
+            maxSellAmount = 15;
+        }
     
     public void act() 
     {
+        getSoil();
         if (timer == 0 && stage == 0) {
-               timer = (60*30) * growthRate;
-               setImage(stage1);
+               resetTimer();
                stage = 1;
-            } else {
-                timer--;
-                }
-        
+            }
         if (timer == 0 && stage == 1) {
-               timer = (60*30) * growthRate;
-               setImage(stage2);
+               resetTimer();
+               setImage(stage1);
                stage = 2;
             } else {
-                timer--;
+                if (soil != null) {
+                      if (soil.watered == true) {
+                        timer--;
+                      }  
+                    }
                 }
+        if (timer == 0 && stage == 2) {
+               
+               setImage(stage2);
+               stage = 3;
+               grown = true;
+            }
+        //getWorld().showText("" + (timer / 60), getX(), getY()-32);
+        //getWorld().showText("" + stage, getX(), getY()-64);
     }
     
-    public void addedToWorld() {
-            Soils soil = (Soils)getOneIntersectingObject(Soils.class);
-            growthRate *= soil.getGrowthRate();
+    private void resetTimer() {
+            timer = (60*25) / quality;
+        }
+    
+    public void getSoil() {
+            soil = (Soils)getOneIntersectingObject(Soils.class);
+            if (soil != null) {
+                    quality = soil.soilQuality;
+                    //getWorld().showText("" + quality, getX(), getY()+64);
+                }
+            
         }
 }
 
