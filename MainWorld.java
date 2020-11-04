@@ -244,6 +244,9 @@ public class MainWorld extends World {
             buildingsButtonList.add(new GarageButton());
             buildingsButtonList.add(new ToolShedButton());
             buildingsButtonList.add(new wellButton());
+            buildingsButtonList.add(new WindmillButton());
+            buildingsButtonList.add(new StableButton());
+            buildingsButtonList.add(new FarmHouseButton());
         }
       
     //====================
