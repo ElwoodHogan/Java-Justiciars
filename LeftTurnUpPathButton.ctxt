@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=LeftTurnUpPathButton
+comment0.text=\n\ This\ is\ a\ template\ for\ makeing\ your\ own\ Button\ to\ access\ your\ custom\ tile\n\n\ 1.\ Duplicate\ this\ class\ by\ right\ clicking\ it\ in\ the\ class\ tree\ and\ hitting\ "duplicate"\n\ \n\ 2.\ Make\ an\ image\ that\ is\ 44x44\n\ \ \ \ Make\ sure\ it\ is\ in\ the\ "images"\ folder\ that\ is\ in\ the\ same\ folder\ as\ the\ .greenfoot\ file.\n\ \ \ \ Set\ it\ to\ this\ class\ by\ right\ clicking\ this\ class\ in\ the\ class\ tree\ and\ hitting\ "set\ image"\n\ \ \ \ \n\ 3.\ Add\ the\ class\ to\ the\ addToBuildingsList()\ method\ in\ the\ MainWorld\ class\n\ \ \ \ To\ do\ so,\ use\ this\ code\ line,\ and\ replace\ the\ "className"\ with\ your\ classes\ name\n\ \ \ \ buildingsButtonList.add(new\ className());\n\ \ \ \ \n\ 4.\ Edit\ the\ variables\ to\ the\ name\ of\ the\ building,\ as\ well\ as\ the\ cost\ of\ the\ building\n\ \ \ \ Edit\ the\ last\ line\ of\ code\ to\ include\ the\ name\ of\ your\ custom\ tile\n\ \ \ \ For\ reference,\ see\ the\ "barnButton"\ class\n\ \ \ \ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ act()
+numComments=2

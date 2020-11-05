@@ -304,7 +304,12 @@ public class MainWorld extends World {
         }
       
     public void addToPathsList() {
-            pathsButtonList.add(new pathsButton());
+            pathsButtonList.add(new StraightPathButton());
+            pathsButtonList.add(new VerticalPathButton());
+            pathsButtonList.add(new LeftTurnUpPathButton());
+            pathsButtonList.add(new LeftTurnDownPathButton());
+            pathsButtonList.add(new RightTurnUpPathButton());
+            pathsButtonList.add(new RightTurnDownPathButton());
             //add your class here
             
         }     
@@ -333,7 +338,11 @@ public class MainWorld extends World {
         }
     
     public void addToFencingList() {
-            fencingButtonList.add(new fencingButton());
+            fencingButtonList.add(new FenceStraightButton());
+            fencingButtonList.add(new FenceLeftBottomCornerButton());
+            fencingButtonList.add(new FenceLeftTopCornerButton());
+            fencingButtonList.add(new FenceRightBottomCornerButton());
+            fencingButtonList.add(new FenceRightTopCornerButton());
             //add your class here
             
         }    
@@ -362,7 +371,11 @@ public class MainWorld extends World {
         }
        
     public void addToDecorList() {
-            decorButtonList.add(new decorButton());
+            decorButtonList.add(new BushButton());
+            decorButtonList.add(new FallTreeButton());
+            decorButtonList.add(new TreeButton());
+            decorButtonList.add(new TropicalTreeButton());
+            decorButtonList.add(new lamppostButton());
             //add your class here
             
         }     
