@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=SiloTile
-comment0.text=\r\n\ \ 1x3\ tiles\r\n\ \ functionless\r\n
+comment0.text=\n\ \ 1x3\ tiles\n\ \ functionless\n
 comment1.params=costIn
 comment1.target=SiloTile(double)
 comment2.params=

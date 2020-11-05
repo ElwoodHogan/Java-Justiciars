@@ -34,6 +34,27 @@ public class Player extends Actor
     }
     
     public void movement(){
+        if (isTouching(sand.class) == true){
+         if(Greenfoot.isKeyDown("s")) {
+            setLocation(getX(), getY() + playerMovementSpeed);
+            setImage("BCC Looking down.png");
+        }
+        if(Greenfoot.isKeyDown("w")) {
+            setLocation(getX(), getY() - playerMovementSpeed);
+            setImage("BCC Looking up.png");
+        }
+        if(Greenfoot.isKeyDown("d")){
+            setLocation(getX() + playerMovementSpeed, getY());
+            setImage("BCC Looking right.png");
+        }
+         if(Greenfoot.isKeyDown("a")) {
+            setLocation(getX() - playerMovementSpeed, getY());
+            setImage("BCC Looking left.png");
+        }
+        }
+        if(isTouching(shallowWater.class)){
+            move(-2);
+        }
         if (getOneObjectAtOffset(0, playerMovementSpeed, null) == null) {
         if(Greenfoot.isKeyDown("s")) {
             setLocation(getX(), getY() + playerMovementSpeed);
@@ -46,7 +67,7 @@ public class Player extends Actor
             setImage("BCC Looking up.png");
         }
     }
-        if (getOneObjectAtOffset(playerMovementSpeed, 0, null) == null) {
+        if(getOneObjectAtOffset(playerMovementSpeed, 0, null) == null) {
         if(Greenfoot.isKeyDown("d")){
             setLocation(getX() + playerMovementSpeed, getY());
             setImage("BCC Looking right.png");
