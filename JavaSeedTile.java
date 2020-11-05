@@ -2,26 +2,28 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class cornSeedTile here.
+ * Write a description of class JavaSeedTile here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class cornSeedTile extends Seeds
+public class JavaSeedTile extends Seeds
 {
     
     public double growthRate = 0;
     public double quality = 9;
     private double timer = (60*30) * growthRate;
-    GreenfootImage stage1 = new GreenfootImage("crops/cornTeen.png");
-    GreenfootImage stage2 = new GreenfootImage("crops/cornFull.png");
+    GreenfootImage stage1 = new GreenfootImage("crops/javaSeedStage1.png");
+    GreenfootImage stage2 = new GreenfootImage("crops/javaSeedStage2.png");
+    
     Soils soil = null;
     
-    public cornSeedTile() {
+    public JavaSeedTile() {
             stage = 0;
             grown = false;
-            minSellAmount = 10;
-            maxSellAmount = 15;
+            minSellAmount = 100;
+            maxSellAmount = 150;
+            resetTimer();
         }
     
     public void act() 
@@ -54,7 +56,7 @@ public class cornSeedTile extends Seeds
     }
     
     private void resetTimer() {
-            timer = (60*20) / quality;
+            timer = (60*40) / quality;
         }
     
     public void getSoil() {
