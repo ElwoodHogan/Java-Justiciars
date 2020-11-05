@@ -14,7 +14,7 @@ public class seedShopButton extends MainButtons
     private int selectedSeed = MainWorld.player.selectedSeed;
     seedShopMenu seedMenu = new seedShopMenu();
     cornSeedButton cornSeed = new cornSeedButton();
-    
+    javaSeedButton javaSeed = new javaSeedButton();
     //public static List<Object> seedButtonList = new ArrayList<Object>();
     
     public void act() 
@@ -26,7 +26,7 @@ public class seedShopButton extends MainButtons
                 menuOpen = true;
                 this.getWorld().addObject(seedMenu, 1980-120, 540);
                 this.getWorld().addObject(cornSeed, 1980-120, 140+23);
-                
+                this.getWorld().addObject(javaSeed, 1980-120, 140+23+128+44);
         } else if (Greenfoot.mouseClicked(this) && menuOpen == true) {
                 menuOpen = false;
                 this.getWorld().removeObject(seedMenu);
@@ -41,7 +41,7 @@ public class seedShopButton extends MainButtons
                     return new cornSeedTile();
                     case 2:
                     selectedSeed = 2;
-                    break;
+                    return new JavaSeedTile();
                     case 3:
                     selectedSeed = 3;
                     break;
@@ -60,7 +60,7 @@ public class seedShopButton extends MainButtons
                     case 1:
                     return MainWorld.ownedCornSeeds;
                     case 2:
-                    return MainWorld.ownedPotatoSeeds;
+                    return MainWorld.ownedJavaSeeds;
                     case 3:
                     return MainWorld.ownedCottonSeeds;
                     case 4:
@@ -77,7 +77,7 @@ public class seedShopButton extends MainButtons
                     MainWorld.ownedCornSeeds--;
                     break;
                     case 2:
-                    MainWorld.ownedPotatoSeeds--;
+                    MainWorld.ownedJavaSeeds--;
                     break;
                     case 3:
                     MainWorld.ownedCottonSeeds--;
