@@ -15,6 +15,9 @@ public class seedShopButton extends MainButtons
     seedShopMenu seedMenu = new seedShopMenu();
     cornSeedButton cornSeed = new cornSeedButton();
     javaSeedButton javaSeed = new javaSeedButton();
+    cottonSeedButton cottonSeed = new cottonSeedButton();
+    donutSeedButton donutSeed = new donutSeedButton();
+    moneySeedButton moneySeed = new moneySeedButton();
     //public static List<Object> seedButtonList = new ArrayList<Object>();
     
     public void act() 
@@ -25,13 +28,24 @@ public class seedShopButton extends MainButtons
         if (Greenfoot.mouseClicked(this) && menuOpen == false) {
                 menuOpen = true;
                 this.getWorld().addObject(seedMenu, 1980-120, 540);
-                this.getWorld().addObject(cornSeed, 1980-120, 140+23);
-                this.getWorld().addObject(javaSeed, 1980-120, 140+23+128+44);
+                this.getWorld().addObject(cornSeed, 1980-119, 140+23);
+                this.getWorld().addObject(javaSeed, 1980-119, 140+25+172);
+                this.getWorld().addObject(cottonSeed, 1980-119, 140+26+(172*2));
+                this.getWorld().addObject(donutSeed, 1980-119, 140+28+(172*3));
+                this.getWorld().addObject(moneySeed, 1980-119, 140+30+(172*4));
         } else if (Greenfoot.mouseClicked(this) && menuOpen == true) {
                 menuOpen = false;
                 this.getWorld().removeObject(seedMenu);
                 cornSeed.deleteText();
                 this.getWorld().removeObject(cornSeed);
+                javaSeed.deleteText();
+                this.getWorld().removeObject(javaSeed);
+                cottonSeed.deleteText();
+                this.getWorld().removeObject(cottonSeed);
+                donutSeed.deleteText();
+                this.getWorld().removeObject(donutSeed);
+                moneySeed.deleteText();
+                this.getWorld().removeObject(moneySeed);
             }
     }
     
@@ -44,13 +58,12 @@ public class seedShopButton extends MainButtons
                     return new JavaSeedTile();
                     case 3:
                     selectedSeed = 3;
-                    break;
+                    return new cottonSeedTile();
                     case 4:
-                    selectedSeed = 4;
-                    break;
+                    return new donutSeedTile();
                     case 5:
                     selectedSeed = 5;
-                    break;
+                    return new moneySeedTile();
                 }
             return cornSeed;
         }

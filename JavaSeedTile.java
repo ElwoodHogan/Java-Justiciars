@@ -13,20 +13,23 @@ public class JavaSeedTile extends Seeds
     public double growthRate = 0;
     public double quality = 9;
     private double timer = (60*30) * growthRate;
-    GreenfootImage stage1 = new GreenfootImage("crops/cornTeen.png");
-    GreenfootImage stage2 = new GreenfootImage("crops/cornFull.png");
+    GreenfootImage stage1 = new GreenfootImage("crops/javaSeedStage1.png");
+    GreenfootImage stage2 = new GreenfootImage("crops/javaSeedStage2.png");
+    
     Soils soil = null;
     
     public JavaSeedTile() {
             stage = 0;
             grown = false;
-            minSellAmount = 10;
-            maxSellAmount = 15;
+            minSellAmount = 100;
+            maxSellAmount = 150;
+            resetTimer();
         }
     
     public void act() 
     {
         getSoil();
+        timer = Math.floor(timer);
         if (timer == 0 && stage == 0) {
                resetTimer();
                stage = 1;
@@ -53,7 +56,7 @@ public class JavaSeedTile extends Seeds
     }
     
     private void resetTimer() {
-            timer = (60*25) / quality;
+            timer = (60*40) / quality;
         }
     
     public void getSoil() {

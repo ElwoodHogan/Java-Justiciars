@@ -30,7 +30,7 @@ public class MainWorld extends World {
     //Storing which set of buttons are loaded
     public String currentButtons = "main";
     //initializing starting money
-    public static double money = 200;
+    public static double money = 200000;
     //initializing objects for spawning
     mainButtonMenu mainButtonMenu = new mainButtonMenu();
     backButton backButton = new backButton();
@@ -73,7 +73,7 @@ public class MainWorld extends World {
         addObject(seedShop, 1980-120, 1080-60);
         addObject(waterMeter, 1980-220, 1080-60);
         //addObject(new seedShopMenu(), 1980-120, 540);
-        money = 200;
+        money = 2000000;
         
         //Clears the lists so the lists do not increase on a reset
         buildingsButtonList.clear();

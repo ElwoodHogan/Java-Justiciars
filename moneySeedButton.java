@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class javaSeedButton here.
+ * Write a description of class moneySeedButton here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class javaSeedButton extends SeedButtons
+public class moneySeedButton extends SeedButtons
 {
-   private String seedName = "Java";
-   private int cost = 50;
+   private String seedName = "Money";
+   private int cost = 3500;
    private int selectedSeed = MainWorld.player.selectedSeed;
    //Creates green
    Color greenColor = new Color (0, 255, 0);
@@ -23,9 +23,9 @@ public class javaSeedButton extends SeedButtons
       MouseInfo mouse = Greenfoot.getMouseInfo();
       getWorld().showText(seedName, getX(), getY()-44);
       getWorld().showText(cost + "$", getX(), getY()+39);
-      getWorld().showText("Owned: " + MainWorld.ownedJavaSeeds, getX(), getY()+39+22);
+      getWorld().showText("Owned: " + MainWorld.ownedMoneySeeds, getX(), getY()+39+22);
       selectedSeed = MainWorld.player.selectedSeed;
-      if (selectedSeed == 2) {
+      if (selectedSeed == 5) {
          rectImage.setColor(greenColor);
          rectImage.drawRect(0, 0, rectImage.getWidth()-1, rectImage.getHeight()-1);
          setImage(rectImage);
@@ -33,7 +33,7 @@ public class javaSeedButton extends SeedButtons
          setImage(ogImage);
       }
       if (Greenfoot.mouseClicked(this) && MainWorld.money >= cost) {
-         MainWorld.ownedJavaSeeds++;
+         MainWorld.ownedMoneySeeds++;
          MainWorld.money -= cost;
       }
    }
