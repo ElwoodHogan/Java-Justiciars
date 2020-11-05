@@ -275,9 +275,9 @@ public class MainWorld extends World {
         }
     
     public void addToAnimalsList() {
-            animalsButtonList.add(new cowButton());
-            animalsButtonList.add(new pigButton());
-            animalsButtonList.add(new horseButton());
+            animalsButtonList.add (new cowButton());
+            animalsButtonList.add (new pigButton());
+            animalsButtonList.add (new horseButton());
             
         }    
         
