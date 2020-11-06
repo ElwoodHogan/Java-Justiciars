@@ -282,6 +282,7 @@ public class MainWorld extends World {
         }
      
     public void addToSoilsList() {
+            soilsButtonList.add(new cruddySoilButton());
             soilsButtonList.add(new basicSoilButton());
             soilsButtonList.add(new richSoilButton());
             //add your class here

@@ -44,7 +44,7 @@ public class basicSoilTile extends Soils
     //Dont forget to change this to the class name!!!
     public basicSoilTile(double costIn) {
             cost = costIn;
-            soilQuality = 1;
+            soilQuality = 1.5;
             watered = false;
             planted = false;
             timer = 60*45;
