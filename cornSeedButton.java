@@ -26,21 +26,21 @@ public class cornSeedButton extends SeedButtons
       getWorld().showText("Owned: " + MainWorld.ownedCornSeeds, getX(), getY()+39+22);
       selectedSeed = MainWorld.player.selectedSeed;
       if (selectedSeed == 1) {
-            rectImage.setColor(greenColor);
-            rectImage.drawRect(0, 0, rectImage.getWidth()-1, rectImage.getHeight()-1);
-            setImage(rectImage);
+         rectImage.setColor(greenColor);
+         rectImage.drawRect(0, 0, rectImage.getWidth()-1, rectImage.getHeight()-1);
+         setImage(rectImage);
       } else {
-            setImage(ogImage);
-          }
+         setImage(ogImage);
+      }
       if (Greenfoot.mouseClicked(this) && MainWorld.money >= cost) {
-            MainWorld.ownedCornSeeds++;
-            MainWorld.money -= cost;
-          }
+         MainWorld.ownedCornSeeds++;
+         MainWorld.money -= cost;
+      }
    }
    
    public void deleteText() {
       getWorld().showText("", getX(), getY()-44);
       getWorld().showText("", getX(), getY()+39);
       getWorld().showText("", getX(), getY()+39+22);
-       }
+   }
 }
