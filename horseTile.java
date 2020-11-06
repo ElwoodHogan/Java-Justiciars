@@ -12,7 +12,7 @@ public class horseTile extends Animals
     public double cost;
     
     //add any needed variables here
-    int timer = 360;
+    int timer = 600;
     //creates the current image for use in making a border, and a new un-edited copy of the current image.
     GreenfootImage rectImage = getImage();
     GreenfootImage ogImage = new GreenfootImage(rectImage);
@@ -70,10 +70,11 @@ public class horseTile extends Animals
                 ((MainWorld)getWorld()).money -= cost;
             }  
         } else {
-            //This is where you tell the animal what it does
+            // horse depletes water level by 10 every 10s after it's placed
             if (timer == 0) {
-               
-               timer = 360;
+               waterMeter waterMeter = (waterMeter) getWorld().getObjects(waterMeter.class).get(0);
+               waterMeter.waterLevel -= 10;
+               timer = 600;
             } else {
                 timer--;
                 }

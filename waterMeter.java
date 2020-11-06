@@ -18,6 +18,7 @@ public class waterMeter extends HUD
     
     public waterMeter() {
            rectImage.setColor(blueColor);
+           refill();
            rectImage.fillRect(4, 19, 56, waterLevel);
            //setImage(rectImage);
         }
