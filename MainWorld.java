@@ -16,6 +16,7 @@ public class MainWorld extends World {
     public static List<Object> pathsButtonList = new ArrayList<Object>();
     public static List<Object> fencingButtonList = new ArrayList<Object>();
     public static List<Object> decorButtonList = new ArrayList<Object>();
+    public static List<Object> equipmentButtonList = new ArrayList<Object>();
     
     //Initializing the global seed variables
     public static int ownedCornSeeds = 0;
@@ -50,6 +51,7 @@ public class MainWorld extends World {
         spawnOcean();
         addObject(new rock(), 1888, 48);
         addObject(new rock(), 1888-32, 48+16);
+        spawnRocks();
         spawnForest();
         
         addObject(mainButtonMenu, 660, 1080-60);
@@ -71,6 +73,7 @@ public class MainWorld extends World {
         pathsButtonList.clear();
         fencingButtonList.clear();
         decorButtonList.clear();
+        equipmentButtonList.clear();
     }
     
     public void act() {
@@ -107,6 +110,29 @@ public class MainWorld extends World {
             spawnForestLane(26, 5, 5);
         }
     
+        public void spawnRocks() {
+         addObject( new rock(), 32, 32);  
+         addObject( new rock(), 384, 512);
+         addObject( new rock(), 288, 128);
+         addObject( new rock(), 608, 704);
+         addObject( new rock(), 64, 896);
+         addObject( new rock(), 160, 576);
+         addObject( new rock(), 704, 64);
+         addObject( new rock(), 768, 640);
+         addObject( new rock(), 512, 546);
+         addObject( new rock(), 800, 160);
+         addObject( new rock(), 864, 672);
+         addObject( new rock(), 896, 800);
+         addObject( new rock(), 960, 128);
+         addObject( new rock(), 1024, 96);
+         addObject( new rock(), 1024, 704);
+         addObject( new rock(), 1152, 32);
+         addObject( new rock(), 1184, 832);
+         addObject( new rock(), 1280, 736);
+         addObject( new rock(), 1312, 64);
+         addObject( new rock(), 1312, 512);
+         addObject( new rock(), 1376, 896);
+        }
     //Spawns the top right ocean
     //The first param dictates from the top, which lane of tiles you want to spawn the ocean tiles on
     //The next four params dictate how many deep, medium, shallow, and sandy tiles to spawn
@@ -140,11 +166,11 @@ public class MainWorld extends World {
             spawnOceanLane(3, 4, 3, 3, 3);
             spawnOceanLane(4, 4, 3, 2, 3);
             spawnOceanLane(5, 3, 3, 2, 3);
-            spawnOceanLane(6, 3, 3, 2, 3);
-            spawnOceanLane(7, 2, 3, 2, 3);
-            spawnOceanLane(8, 1, 3, 2, 3);
-            spawnOceanLane(9, 0, 3, 2, 2);
-            spawnOceanLane(10, 0, 1, 3, 2);
+            spawnOceanLane(6, 3, 3, 2, 56);
+            spawnOceanLane(7, 2, 3, 59, 0);
+            spawnOceanLane(8, 1, 3, 60, 0);
+            spawnOceanLane(9, 0, 3, 61, 0);
+            spawnOceanLane(10, 0, 1, 3, 60);
             spawnOceanLane(11, 0, 0, 2, 3);
             spawnOceanLane(12, 0, 0, 1, 3);
             spawnOceanLane(13, 0, 0, 0, 3);
@@ -166,8 +192,9 @@ public class MainWorld extends World {
         currentButtons = "main";
         int i = 0;
             for (Object button : mainButtonList) {
-                //testing if i is more than 5, because Greenfoor refuses to re-initalize the i variable
-                if (i>5) {i=0;};
+                //testing if i is more than 6, because Greenfoor refuses to re-initalize the i variable
+                // comment from john :) had to change this to six since addition of another button messed them up
+                if (i>6) {i=0;};
                 addObject((Actor)button, 36+22+(i*109), 1024);
                 i++;        
             }
@@ -189,6 +216,7 @@ public class MainWorld extends World {
             mainButtonList.add(new pathsButton());
             mainButtonList.add(new fencingButton());
             mainButtonList.add(new decorButton());
+            mainButtonList.add(new equipmentButton());
         } 
         
     //====================
@@ -220,6 +248,9 @@ public class MainWorld extends World {
             buildingsButtonList.add(new GarageButton());
             buildingsButtonList.add(new ToolShedButton());
             buildingsButtonList.add(new wellButton());
+            buildingsButtonList.add(new WindmillButton());
+            buildingsButtonList.add(new StableButton());
+            buildingsButtonList.add(new FarmHouseButton());
         }
       
     //====================
@@ -366,7 +397,34 @@ public class MainWorld extends World {
             //add your class here
             
         }     
-     
+    public void addEquipmentButtons() {
+        addToEquipmentList();
+        currentButtons = "equipment";
+        int size = equipmentButtonList.size();
+        int i = 0;
+            for (Object button : equipmentButtonList) {
+                if (i>equipmentButtonList.size()) {i=0;};
+                addObject((Actor)button, 36+22+(i*109), 1024);
+                i++;        
+            }
+        }
+        
+    public void removeEquipmentButtons() {
+           for (Object button : equipmentButtonList) {
+                removeObject((Actor)button);
+           }
+           equipmentButtonList.clear();
+        }
+       
+    public void addToEquipmentList() {
+            equipmentButtonList.add(new harvesterButton());
+            equipmentButtonList.add(new plowButton());
+            equipmentButtonList.add(new mowerButton());
+            equipmentButtonList.add(new spreadersButton());
+            equipmentButtonList.add(new loaderButton());
+            //add your class here
+            
+        }  
         
         
     //returns the money variable    
