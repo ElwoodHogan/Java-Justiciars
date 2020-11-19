@@ -12,9 +12,9 @@ public class pigTile extends Animals
     public double cost;
     
     //add any needed variables here
-    
+    int timer = 360;
     //creates the current image for use in making a border, and a new un-edited copy of the current image.
-    GreenfootImage rectImage = getImage();
+    GreenfootImage rectImage = new GreenfootImage("pig sprite.png");
     GreenfootImage ogImage = new GreenfootImage(rectImage);
     
     //Creates the red and green colors used in drawing a rectangle
@@ -71,7 +71,12 @@ public class pigTile extends Animals
             }  
         } else {
             //This is where you tell the animal what it does
-            
+            if (timer == 0) {
+               ((MainWorld)getWorld()).money += 2;
+               timer = 360;
+            } else {
+                timer--;
+                }
         }
         
     }    

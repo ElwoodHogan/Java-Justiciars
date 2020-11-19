@@ -14,7 +14,7 @@ public class cowTile extends Animals
     //add any needed variables here
     int timer = 360;
     //creates the current image for use in making a border, and a new un-edited copy of the current image.
-    GreenfootImage rectImage = getImage();
+    GreenfootImage rectImage = new GreenfootImage("cow.png");
     GreenfootImage ogImage = new GreenfootImage(rectImage);
     
     //Creates the red and green colors used in drawing a rectangle
@@ -70,14 +70,12 @@ public class cowTile extends Animals
                 ((MainWorld)getWorld()).money -= cost;
             }  
         } else {
-            //This is where you tell the building what it does
             if (timer == 0) {
-               ((MainWorld)getWorld()).money += 5;
-               timer = 300;
+               ((MainWorld)getWorld()).money += 2;
+               timer = 360;
             } else {
                 timer--;
                 }
-            
         }
         
     }

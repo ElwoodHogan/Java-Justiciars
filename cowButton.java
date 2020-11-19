@@ -11,9 +11,11 @@ public class cowButton extends AnimalButtons
     //Edit these fields
     private final String tileName = "Cow";
     public double cost = 15;
+    GreenfootImage cowImage = new GreenfootImage("cowButton.png");
     
     public void act() 
     {
+        setImage(cowImage);
         MouseInfo mouse = Greenfoot.getMouseInfo();
         getWorld().showText(tileName, getX(), getY()-44);
         getWorld().showText(cost + "$", getX(), getY()+39);
