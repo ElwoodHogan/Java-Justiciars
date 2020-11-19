@@ -53,7 +53,13 @@ public class Player extends Actor
         }
         }
         if(isTouching(shallowWater.class)){
-            move(-2);
+            if(Greenfoot.isKeyDown("w")){
+                setLocation(getX()-2, getY()-2);
+            }
+            if(Greenfoot.isKeyDown("s")){
+                setLocation(getX()+2, getY()+2);
+            }
+            
         }
         if (getOneObjectAtOffset(0, playerMovementSpeed, null) == null) {
         if(Greenfoot.isKeyDown("s")) {

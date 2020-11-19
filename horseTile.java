@@ -12,9 +12,9 @@ public class horseTile extends Animals
     public double cost;
     
     //add any needed variables here
-    int timer = 600;
+    int timer = 360;
     //creates the current image for use in making a border, and a new un-edited copy of the current image.
-    GreenfootImage rectImage = getImage();
+    GreenfootImage rectImage = new GreenfootImage("horse sprite.png");
     GreenfootImage ogImage = new GreenfootImage(rectImage);
     
     //Creates the red and green colors used in drawing a rectangle
@@ -70,11 +70,9 @@ public class horseTile extends Animals
                 ((MainWorld)getWorld()).money -= cost;
             }  
         } else {
-            // horse depletes water level by 10 every 10s after it's placed
             if (timer == 0) {
-               waterMeter waterMeter = (waterMeter) getWorld().getObjects(waterMeter.class).get(0);
-               waterMeter.waterLevel -= 10;
-               timer = 600;
+               ((MainWorld)getWorld()).money += 2;
+               timer = 360;
             } else {
                 timer--;
                 }
