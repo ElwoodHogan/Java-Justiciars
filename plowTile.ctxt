@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=plowTile
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ plowTile\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=costIn
+comment1.target=plowTile(double)
+comment2.params=
+comment2.target=void\ act()
+numComments=3
