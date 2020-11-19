@@ -16,4 +16,12 @@ public class Equipment extends Tiles
     {
         // Add your action code here.
     }    
+    public void removeThis() {
+        if(mouse != null) {
+           if (mouse.getButton() == 3) {
+                    ((MainWorld)getWorld()).removeObject(this);
+                    return;
+           }
+        }
+    }
 }

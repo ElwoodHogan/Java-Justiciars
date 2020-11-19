@@ -422,6 +422,8 @@ public class MainWorld extends World {
             equipmentButtonList.add(new mowerButton());
             equipmentButtonList.add(new spreadersButton());
             equipmentButtonList.add(new loaderButton());
+            equipmentButtonList.add(new balerButton());
+            equipmentButtonList.add(new planterButton());
             //add your class here
             
         }  
