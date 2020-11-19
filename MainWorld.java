@@ -8,6 +8,9 @@ import java.util.ArrayList;
  * @version 0.0.2.1
  */
 public class MainWorld extends World {
+    //boolean for intro
+    public static boolean introDone = false;
+    
     //initializes lists for the buttons
     public static List<Object> mainButtonList = new ArrayList<Object>();
     public static List<Object> buildingsButtonList = new ArrayList<Object>();
@@ -20,7 +23,7 @@ public class MainWorld extends World {
     
     //Initializing the global seed variables
     public static int ownedCornSeeds = 0;
-    public static int ownedPotatoSeeds = 0;
+    public static int ownedJavaSeeds = 0;
     public static int ownedCottonSeeds = 0;
     public static int ownedDonutSeeds = 0;
     public static int ownedMoneySeeds = 0;
@@ -28,7 +31,7 @@ public class MainWorld extends World {
     //Storing which set of buttons are loaded
     public String currentButtons = "main";
     //initializing starting money
-    public static double money = 200;
+    public static double money = 200000;
     //initializing objects for spawning
     mainButtonMenu mainButtonMenu = new mainButtonMenu();
     backButton backButton = new backButton();
@@ -40,11 +43,18 @@ public class MainWorld extends World {
      * Constructor for objects of class MyWorld.
      * 
      */
-    public MainWorld()
+    public MainWorld(boolean introDone)
     {    
+        
         // Create a new world with 1920x1080 cells with a cell size of 1x1 pixels, and true means it had a boerder.
         super(1920, 1080, 1, true);
+        if (!introDone) {
+                Greenfoot.setWorld(new IntroWorld());
+            }
+        
         setPaintOrder(Buttons.class, HUD.class, Player.class, Environment.class, Buildings.class);
+        //Adds intro scene and pauses game until intro is gone
+        
         //spawns the player
         addObject(player, 990, 540);
         //spawns the ocean, ocean rocks, and forest area
@@ -64,7 +74,7 @@ public class MainWorld extends World {
         addObject(seedShop, 1980-120, 1080-60);
         addObject(waterMeter, 1980-220, 1080-60);
         //addObject(new seedShopMenu(), 1980-120, 540);
-        money = 200;
+        money = 2000000;
         
         //Clears the lists so the lists do not increase on a reset
         buildingsButtonList.clear();
@@ -81,7 +91,7 @@ public class MainWorld extends World {
             showText("Money: " + money, 120, 50);
             showText("" + buildingsButtonList.size(), 120, 100);
         }
-        
+    
     //========================
     //Spawning the Environment
     //========================
@@ -276,6 +286,7 @@ public class MainWorld extends World {
         }
      
     public void addToSoilsList() {
+            soilsButtonList.add(new cruddySoilButton());
             soilsButtonList.add(new basicSoilButton());
             soilsButtonList.add(new richSoilButton());
             //add your class here
@@ -306,8 +317,9 @@ public class MainWorld extends World {
         }
     
     public void addToAnimalsList() {
-            animalsButtonList.add(new animalsButton());
-            //add your class here
+            animalsButtonList.add (new cowButton());
+            animalsButtonList.add (new pigButton());
+            animalsButtonList.add (new horseButton());
             
         }    
         

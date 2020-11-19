@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=cottonSeedTile
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ cottonSeedTile\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=cottonSeedTile()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ resetTimer()
+comment4.params=
+comment4.target=void\ getSoil()
+numComments=5

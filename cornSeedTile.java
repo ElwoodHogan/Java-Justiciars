@@ -27,6 +27,7 @@ public class cornSeedTile extends Seeds
     public void act() 
     {
         getSoil();
+        timer = Math.floor(timer);
         if (timer == 0 && stage == 0) {
                resetTimer();
                stage = 1;
@@ -53,7 +54,7 @@ public class cornSeedTile extends Seeds
     }
     
     private void resetTimer() {
-            timer = (60*25) / quality;
+            timer = (60*20) / quality;
         }
     
     public void getSoil() {

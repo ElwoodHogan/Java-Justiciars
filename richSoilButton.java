@@ -10,7 +10,7 @@ public class richSoilButton extends SoilButtons
 {
     //Edit these fields
     private final String tileName = "Rich Soil";
-    public double cost = 100;
+    public double cost = 1000;
     
     public void act() 
     {
