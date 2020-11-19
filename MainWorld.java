@@ -19,6 +19,7 @@ public class MainWorld extends World {
     public static List<Object> pathsButtonList = new ArrayList<Object>();
     public static List<Object> fencingButtonList = new ArrayList<Object>();
     public static List<Object> decorButtonList = new ArrayList<Object>();
+    public static List<Object> equipmentButtonList = new ArrayList<Object>();
     
     //Initializing the global seed variables
     public static int ownedCornSeeds = 0;
@@ -82,6 +83,7 @@ public class MainWorld extends World {
         pathsButtonList.clear();
         fencingButtonList.clear();
         decorButtonList.clear();
+        equipmentButtonList.clear();
     }
     
     public void act() {
@@ -200,8 +202,9 @@ public class MainWorld extends World {
         currentButtons = "main";
         int i = 0;
             for (Object button : mainButtonList) {
-                //testing if i is more than 5, because Greenfoor refuses to re-initalize the i variable
-                if (i>5) {i=0;};
+                //testing if i is more than 6, because Greenfoor refuses to re-initalize the i variable
+                // comment from john :) had to change this to six since addition of another button messed them up
+                if (i>6) {i=0;};
                 addObject((Actor)button, 36+22+(i*109), 1024);
                 i++;        
             }
@@ -223,6 +226,7 @@ public class MainWorld extends World {
             mainButtonList.add(new pathsButton());
             mainButtonList.add(new fencingButton());
             mainButtonList.add(new decorButton());
+            mainButtonList.add(new equipmentButton());
         } 
         
     //====================
@@ -405,7 +409,36 @@ public class MainWorld extends World {
             //add your class here
             
         }     
-     
+    public void addEquipmentButtons() {
+        addToEquipmentList();
+        currentButtons = "equipment";
+        int size = equipmentButtonList.size();
+        int i = 0;
+            for (Object button : equipmentButtonList) {
+                if (i>equipmentButtonList.size()) {i=0;};
+                addObject((Actor)button, 36+22+(i*109), 1024);
+                i++;        
+            }
+        }
+        
+    public void removeEquipmentButtons() {
+           for (Object button : equipmentButtonList) {
+                removeObject((Actor)button);
+           }
+           equipmentButtonList.clear();
+        }
+       
+    public void addToEquipmentList() {
+            equipmentButtonList.add(new harvesterButton());
+            equipmentButtonList.add(new plowButton());
+            equipmentButtonList.add(new mowerButton());
+            equipmentButtonList.add(new spreadersButton());
+            equipmentButtonList.add(new loaderButton());
+            equipmentButtonList.add(new balerButton());
+            equipmentButtonList.add(new planterButton());
+            //add your class here
+            
+        }  
         
         
     //returns the money variable    
