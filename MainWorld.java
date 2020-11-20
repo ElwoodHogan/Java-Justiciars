@@ -16,7 +16,7 @@ public class MainWorld extends World {
     public static List<Object> buildingsButtonList = new ArrayList<Object>();
     public static List<Object> soilsButtonList = new ArrayList<Object>();
     public static List<Object> animalsButtonList = new ArrayList<Object>();
-    public static List<Object> pathsButtonList = new ArrayList<Object>();
+    //public static List<Object> pathsButtonList = new ArrayList<Object>();
     public static List<Object> fencingButtonList = new ArrayList<Object>();
     public static List<Object> decorButtonList = new ArrayList<Object>();
     public static List<Object> equipmentButtonList = new ArrayList<Object>();
@@ -31,7 +31,7 @@ public class MainWorld extends World {
     //Storing which set of buttons are loaded
     public String currentButtons = "main";
     //initializing starting money
-    public static double money = 200000;
+    public static double money = 50;
     //initializing objects for spawning
     mainButtonMenu mainButtonMenu = new mainButtonMenu();
     backButton backButton = new backButton();
@@ -79,7 +79,7 @@ public class MainWorld extends World {
         buildingsButtonList.clear();
         soilsButtonList.clear();
         animalsButtonList.clear();
-        pathsButtonList.clear();
+        //pathsButtonList.clear();
         fencingButtonList.clear();
         decorButtonList.clear();
         equipmentButtonList.clear();
@@ -199,8 +199,8 @@ public class MainWorld extends World {
             mainButtonList.add(new buildingsButton());
             mainButtonList.add(new farmsButton());
             mainButtonList.add(new animalsButton());
-            mainButtonList.add(new pathsButton());
-            mainButtonList.add(new fencingButton());
+            //mainButtonList.add(new pathsButton());
+            //mainButtonList.add(new fencingButton());
             mainButtonList.add(new decorButton());
             mainButtonList.add(new equipmentButton());
         } 
@@ -300,6 +300,7 @@ public class MainWorld extends World {
     //Paths Buttons
     //==================== 
     
+    /*
     public void addPathsButtons() {
         addToPathsList();
         currentButtons = "paths";
@@ -353,7 +354,7 @@ public class MainWorld extends World {
             //add your class here
             
         }    
-        
+        */
     //====================
     //Decor Buttons
     //==================== 

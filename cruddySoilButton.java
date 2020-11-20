@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class cruddySoilButton extends SoilButtons
 {
     //Edit these fields
-    private final String tileName = "Basic Soil";
+    private final String tileName = "Cruddy Soil";
     public double cost = 10;
     
     public void act() 

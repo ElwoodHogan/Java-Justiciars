@@ -17,8 +17,8 @@ public class fencingButton extends MainButtons
         getWorld().showText(buttonName, getX(), getY()-44);
         getWorld().showText("", getX(), getY()+39);
         if (Greenfoot.mouseClicked(this)) {
-                ((MainWorld)getWorld()).addFencingButtons();
-                ((MainWorld)getWorld()).removeMainButtons(); 
+                //((MainWorld)getWorld()).addFencingButtons();
+                //((MainWorld)getWorld()).removeMainButtons(); 
                 
             }
     }    

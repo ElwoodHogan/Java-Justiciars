@@ -28,10 +28,10 @@ public class backButton extends Buttons
                             ((MainWorld)getWorld()).removeAnimalsButtons();
                             break;
                         case "paths":
-                            ((MainWorld)getWorld()).removePathsButtons();
+                            //((MainWorld)getWorld()).removePathsButtons();
                             break;
                         case "fencing":
-                            ((MainWorld)getWorld()).removeFencingButtons();
+                            //((MainWorld)getWorld()).removeFencingButtons();
                             break;
                         case "decor":
                             ((MainWorld)getWorld()).removeDecorButtons();
