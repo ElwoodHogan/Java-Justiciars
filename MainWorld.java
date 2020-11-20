@@ -73,7 +73,7 @@ public class MainWorld extends World {
         addObject(seedShop, 1980-120, 1080-60);
         addObject(waterMeter, 1980-220, 1080-60);
         //addObject(new seedShopMenu(), 1980-120, 540);
-        money = 2000000;
+        money = 30;
         
         //Clears the lists so the lists do not increase on a reset
         buildingsButtonList.clear();
@@ -88,7 +88,6 @@ public class MainWorld extends World {
     public void act() {
             //displays the players current money
             showText("Money: " + money, 120, 50);
-            showText("" + buildingsButtonList.size(), 120, 100);
         }
     
     //========================
