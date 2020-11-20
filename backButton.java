@@ -36,6 +36,9 @@ public class backButton extends Buttons
                         case "decor":
                             ((MainWorld)getWorld()).removeDecorButtons();
                             break;
+                        case "equipment":
+                            ((MainWorld)getWorld()).removeEquipmentButtons();
+                            break;
                     }
                 ((MainWorld)getWorld()).addMainButtons();
             }
