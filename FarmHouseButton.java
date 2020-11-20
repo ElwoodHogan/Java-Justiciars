@@ -24,7 +24,7 @@ public class FarmHouseButton extends BuildingButtons
 {
     //Edit these fields
     private final String tileName = "Farm House";
-    public double cost = 200;
+    public double cost = 2000;
     
     public void act() 
     {

@@ -25,7 +25,7 @@ public class StableTile extends Buildings
     public double cost;
     
     //add any needed variables here
-    
+    int timer = 300;
     //creates the current image for use in making a border, and a new un-edited copy of the current image.
     GreenfootImage rectImage = getImage();
     GreenfootImage ogImage = new GreenfootImage(rectImage);
@@ -84,7 +84,12 @@ public class StableTile extends Buildings
             }  
         } else {
             //This is where you tell the building what it does
-            
+            if (timer == 0) {
+               ((MainWorld)getWorld()).money += 10;
+               timer = 300;
+            } else {
+                timer--;
+                }
         }
         
     }

@@ -24,7 +24,7 @@ public class StableButton extends BuildingButtons
 {
     //Edit these fields
     private final String tileName = "Horse Stable";
-    public double cost = 60;
+    public double cost = 600;
     
     public void act() 
     {

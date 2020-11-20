@@ -24,7 +24,7 @@ public class WindmillButton extends BuildingButtons
 {
     //Edit these fields
     private final String tileName = "Windmill";
-    public double cost = 80;
+    public double cost = 800;
     
     public void act() 
     {
